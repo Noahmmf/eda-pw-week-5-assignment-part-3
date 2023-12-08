@@ -43,11 +43,27 @@ console.log(myCollection);
 function showCollection(collection) {
 
   for (let i = 0; i < collection.length; i++)
-  
-    console.log( collection[i].title, "by", collection[i].artist, ", published in", collection[i].yearPublished);
+
+    console.log(`${collection[i].title} by, ${collection[i].artist} published in, ${collection[i].yearPublished}`);
 }
 
 showCollection(myCollection);
+
+function findByArtist(collection, artist) {
+  let artistArray = [];
+
+  for (let i = 0; i < collection.length; i++) {
+    if (collection[i].artist === artist) {
+      artistArray.push(collection[i]);
+    }
+  }
+
+  return artistArray;
+}
+
+console.log("Find albums by QUEEN:", findByArtist(myCollection, "QUEEN"));
+console.log("Find albums by U2:", findByArtist(myCollection, "U2"));
+
 
 // PLEASE DO NOT MODIFY THIS. Just leave it down here at the bottom. Think of it
 // as a lil' chunk of friendly code that you don't need to understand right now.
